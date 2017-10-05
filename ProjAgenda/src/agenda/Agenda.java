@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
+
 
 public class Agenda {
 	
@@ -22,20 +22,12 @@ public class Agenda {
 		this.contatos.put(pessoa.getNome(), pessoa);
 	}
 	
-	public List<String> listarNomes() {
-		ArrayList<String> nomes = new ArrayList<String>(contatos.size());
-		for (Entry<String, Pessoa> entry : contatos.entrySet()) {
-			nomes.add(entry.getKey());
-		}
-		return nomes;
+	public List<String> listarNomes() {	
+		return new ArrayList<String>(contatos.keySet());
 	}
 		
 	public List<Pessoa> listarPessoas() {
-		ArrayList<Pessoa> pessoas = new ArrayList<Pessoa>(contatos.size());
-		for (Entry<String, Pessoa> entry : contatos.entrySet()) {
-			pessoas.add(entry.getValue());
-		}
-		return pessoas;
+		return new ArrayList<Pessoa>(contatos.values());
 	}
 	
 }
